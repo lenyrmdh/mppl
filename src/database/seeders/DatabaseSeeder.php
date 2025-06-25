@@ -32,10 +32,6 @@ class DatabaseSeeder extends Seeder
 
         // Seeder lain dipanggil setelah user dan role sudah siap
         $this->call([
-            SeoSeeder::class,
-            PageConfigSeeder::class,
-            LogoSeeder::class,
-            FooterSeeder::class,
             JabatanSeeder::class,
             DivisiSeeder::class,
             DataPegawaiSeeder::class,
