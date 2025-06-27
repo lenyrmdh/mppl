@@ -26,7 +26,6 @@ class DataPegawaiResource extends Resource
         return $form->schema([
             Forms\Components\TextInput::make('nip')->required()->maxLength(255),
             Forms\Components\TextInput::make('nama')->required()->maxLength(255),
-            Forms\Components\TextInput::make('email')->email()->required()->maxLength(255),
             Forms\Components\TextInput::make('password')->password()->required()->maxLength(255),
             Forms\Components\TextInput::make('role')->required(),
             Forms\Components\TextInput::make('jenis_kelamin')->required(),
@@ -44,7 +43,6 @@ class DataPegawaiResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('nip')->searchable(),
                 Tables\Columns\TextColumn::make('nama')->searchable(),
-                Tables\Columns\TextColumn::make('email')->searchable(),
                 Tables\Columns\TextColumn::make('role'),
                 Tables\Columns\TextColumn::make('jenis_kelamin'),
                 Tables\Columns\TextColumn::make('tanggal_lahir')->date()->sortable(),

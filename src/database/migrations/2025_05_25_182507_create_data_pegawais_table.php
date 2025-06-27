@@ -15,7 +15,6 @@ return new class extends Migration
     $table->id();
     $table->string('nip')->unique();
     $table->string('nama');
-    $table->string('email')->unique();
     $table->string('password');
     $table->enum('role', ['admin', 'pegawai'])->default('pegawai');
     $table->enum('jenis_kelamin', ['L', 'P']);

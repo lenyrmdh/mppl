@@ -10,7 +10,7 @@ class DivisiSeeder extends Seeder
     public function run(): void
     {
         Divisi::insert([
-            ['nama' => 'Keuangan'],
+            ['nama' => 'Direktur Utama'],
             ['nama' => 'Pemasaran'],
             ['nama' => 'SDM'],
             ['nama' => 'Operasional'],

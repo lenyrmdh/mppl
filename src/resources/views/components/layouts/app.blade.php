@@ -27,82 +27,84 @@
   <!-- Main CSS File -->
   <link href="{{ asset('front/assets/css/main.css') }}" rel="stylesheet">
 
-</head>
+<header id="header" class="header d-flex align-items-center fixed-top shadow-sm" style="background-color: #ffffff;">
+  <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-<header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+    <!-- Logo -->
+    <a href="#hero" class="logo d-flex align-items-center me-auto me-xl-0 text-decoration-none">
+      <h1 class="sitename text-primary mb-0">PT.DigitalEdu</h1>
+    </a>
 
-      <a href="{{ url('front/index.html') }}" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="{{ asset('front/assets/img/logo.webp') }}" alt=""> -->
-        <h1 class="sitename">PT.DigitalEdu</h1>
-      </a>
+    <!-- Menu Navigasi -->
+    <nav id="navmenu" class="navmenu d-none d-lg-block">
+      <ul class="d-flex gap-4 list-unstyled mb-0 align-items-center">
+        <li><a href="#hero" class="nav-link scrollto active">Home</a></li>
+        <li><a href="#direktur" class="nav-link scrollto">Profile</a></li>
+        <li><a href="#about" class="nav-link scrollto">About</a></li>
+        <li><a href="#produk" class="nav-link scrollto">Kata Mereka</a></li>
+       
+      </ul>
+    </nav>
 
-      <nav id="navmenu" class="navmenu">
-      </nav>
+    <!-- Tombol Login -->
+    <a class="btn btn-primary px-4 py-2 rounded-5" href="{{ route('filament.admin.auth.login') }}">Login</a>
+  </div>
+</header>
 
-      <a class="btn-getstarted" href="{{ route('filament.admin.auth.login') }}">Login</a>
-
-    </div>
-  </header>
 
   {{ $slot }}
 
   <footer id="footer" class="footer">
 
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-5 col-md-12 footer-about">
-          <a href="" class="logo d-flex align-items-center">
-            <span class="sitename">Strategy  </span>
-          </a>
-          <p>Pengembangan Sistem Manajemen Data Pegawai. Sistem ini menampilkan data pegawai secara lengkap dan menyediakan fitur ekspor langsung ke file Excel untuk memudahkan pengelolaan dan pelaporan data.</p>
-          <div class="social-links d-flex mt-4">
-            <a href="#"><i class="bi bi-twitter-x"></i></a>
-            <a href="#"><i class="bi bi-facebook"></i></a>
-            <a href="#"><i class="bi bi-instagram"></i></a>
-            <a href="#"><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
+   <footer class="pt-5 pb-4" style="background-color: #ffffff; color: #333;">
+  <div class="container">
+    <div class="row gy-4">
+      
+      <!-- Visi & Misi -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <h5 class="fw-bold mb-3 text-primary">Visi & Misi</h5>
+        <p class="text-muted">
+          Menjadi pelopor sistem informasi kepegawaian digital yang transparan, efisien, dan terpercaya di Indonesia.
+        </p>
+        <ul class="text-muted small ps-3">
+          <li>Menyediakan akses data pegawai yang cepat dan akurat</li>
+          <li>Mempermudah monitoring & pelaporan</li>
+          <li>Mendukung transformasi digital SDM</li>
+        </ul>
+      </div>
 
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><a href="#">Beranda</a></li>
-            <li><a href="#">Tentang Sistem</a></li>
-            <li><a href="#">Data Pegawai</a></li>
-            <li><a href="#">Ketentuan Layanan</a></li>
-            <li><a href="#">Kebijakan Privasi</a></li>
-          </ul>
-        </div>
+      <!-- Fitur Unggulan -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <h6 class="fw-semibold mb-3 text-primary">Fitur Unggulan</h6>
+        <ul class="list-unstyled small text-muted">
+          <li>📊 Rekap Data Otomatis</li>
+          <li>📁 Ekspor Excel & PDF</li>
+          <li>🔍 Filter dan Pencarian Cepat</li>
+          <li>⏱️ Monitoring Cuti & Lembur</li>
+          <li>📱 Akses Multi Perangkat</li>
+        </ul>
+      </div>
 
-        <div class="col-lg-2 col-6 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><a href="#">Tampilkan Data Pegawai</a></li>
-            <li><a href="#">Filter & Cari Data</a></li>
-            <li><a href="#">Ekspor Data ke Excel</a></li>
-            <li><a href="#">Monitoring Informasi</a></li>
-            <li><a href="#">Ringan & Efisien</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-          <h4>Contact Us</h4>
-          <p>Pt.DigitalEdu</p>
-          <p>Tangerang</p>
-          <p>Indonesia</p>
-          <p class="mt-4"><strong>Phone:</strong> <span>+62 88214199726</span></p>
-          <p><strong>Email:</strong> <span>digitaledu@gmail.com</span></p>
-        </div>
-
+      <!-- Kontak Kami -->
+      <div class="col-lg-4 col-md-12" data-aos="fade-up" data-aos-delay="300">
+        <h6 class="fw-semibold mb-3 text-primary">Kontak Kami</h6>
+        <ul class="list-unstyled text-muted small">
+          <li><strong>Nama Perusahaan:</strong> PT. DigitalEdu</li>
+          <li><strong>Alamat:</strong> Tangerang, Indonesia</li>
+          <li><strong>Telepon:</strong> +62 8821 4199 726</li>
+          <li><strong>Email:</strong> digitaledu@gmail.com</li>
+          <li><strong>Jam Operasional:</strong> Senin - Jumat, 09.00 - 17.00</li>
+        </ul>
       </div>
     </div>
 
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Pt.DigitalEdu</span> <strong class="px-1 sitename">Cheap</strong> <span>All Rights Reserved</span></p>
+   
+    <hr class="mt-5" style="border-color: #e0e0e0;" />
+
+     <div class="container copyright text-center mt-4">
+      <p>© <span>Pt.DigitalEdu</span> 
       <div class="credits">
-        Designed by <a href="https://bootstrapmade.com/">Pt.DigitalEdu</a>
+        Designed by <a href="https://bootstrapmade.com/">Kelompok 9 </a>
       </div>
     </div>
 

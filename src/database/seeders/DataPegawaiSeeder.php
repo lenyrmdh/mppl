@@ -20,7 +20,6 @@ class DataPegawaiSeeder extends Seeder
         $admin1 = DataPegawai::create([
             'nip' => '19870001',
             'nama' => 'Leny Ramadhani Setiawan',
-            'email' => 'Leny@example.com',
             'password' => Hash::make('password'),
             'role' => 'pegawai',
             'jenis_kelamin' => 'P',
@@ -35,30 +34,28 @@ class DataPegawaiSeeder extends Seeder
         $admin2 = DataPegawai::create([
             'nip' => '19870006',
             'nama' => 'Adam Putra Pratama',
-            'email' => 'adam@example.com',
             'password' => Hash::make('password'),
             'role' => 'pegawai',
             'jenis_kelamin' => 'L',
             'tanggal_lahir' => '2005-12-06',
             'alamat' => 'Jl. Graha No. 3 Tangerang',
             'no_hp' => '081234567890',
-            'jabatan_id' => 2,
-            'divisi_id' => 5,
+            'jabatan_id' => 1,
+            'divisi_id' => 1,
         ]);
 
         // Admin 3
         $admin3 = DataPegawai::create([
             'nip' => '19870003',
             'nama' => 'Anel Safitri',
-            'email' => 'anel@example.com',
             'password' => Hash::make('password'),
             'role' => 'pegawai',
             'jenis_kelamin' => 'P',
             'tanggal_lahir' => '2005-06-07',
             'alamat' => 'Jl. Citra No. 4 Tangerang',
             'no_hp' => '081234567890',
-            'jabatan_id' => 3,
-            'divisi_id' => 4,
+            'jabatan_id' => 1,
+            'divisi_id' => 1,
         ]);
 
         // Pegawai 4–50 dengan data cuti, lembur, gaji
@@ -66,7 +63,6 @@ class DataPegawaiSeeder extends Seeder
             $pegawai = DataPegawai::create([
                 'nip' => '198700' . str_pad($i, 4, '0', STR_PAD_LEFT),
                 'nama' => $faker->name,
-                'email' => "pegawai{$i}@example.com",
                 'password' => Hash::make('password'),
                 'role' => 'pegawai',
                 'jenis_kelamin' => $faker->randomElement(['L', 'P']),
@@ -74,17 +70,29 @@ class DataPegawaiSeeder extends Seeder
                 'alamat' => $faker->address,
                 'no_hp' => '08' . $faker->numerify('##########'),
                 'jabatan_id' => rand(2, 14),
-                'divisi_id' => rand(1, 10),
+                'divisi_id' => rand(2, 10),
             ]);
 
-            // Tambah data cuti
+            
             Cuti::create([
                 'pegawai_id' => $pegawai->id,
                 'tanggal_mulai' => now()->subDays(rand(10, 30)),
                 'tanggal_selesai' => now()->subDays(rand(1, 9)),
-                //'jumlah_hari' => rand(1, 5),
-                'alasan' => $faker->sentence,
+                'alasan' => $faker->randomElement([
+                    'Kucing saya melahirkan',
+                    'Cuti pribadi untuk istirahat',
+                    'Mengurus keperluan keluarga',
+                    'Liburan singkat untuk refreshing',
+                    'Istirahat karena sakit ringan',
+                    'Menghadiri pernikahan saudara',
+                    'Ada keperluan mendesak di luar kota',
+                    'Mengurus dokumen penting',
+                    'Mengantar anggota keluarga ke rumah sakit',
+                    'Pemulihan dari kelelahan kerja',
+                    'Izin menghadiri acara keluarga',
+                ]),
             ]);
+
 
             // Tambah data lembur
             Lembur::create([

@@ -11,7 +11,7 @@ class DataPegawai extends Authenticatable
     use HasFactory, Notifiable;
 
     protected $fillable = [
-        'nip', 'nama', 'email', 'password', 'role',
+        'nip', 'nama', 'password', 'role',
         'jenis_kelamin', 'tanggal_lahir', 'alamat', 'no_hp',
         'jabatan_id', 'divisi_id',
     ];
